@@ -27,6 +27,9 @@ function App() {
   const [turn, setTurn] = useState(TURNS.X);
 
   const updateBoard = (index) => {
+    
+    // If position is selected, do not update.
+    if(board[index])return
     const newBoard = [...board]
     newBoard[index] = turn
     setBoard(newBoard)
@@ -38,7 +41,7 @@ function App() {
 
   return (
     <main className="board">
-      <h1>Tic tac toe</h1>
+      <h1>Tic tac toe ⚔️</h1>
       <section className="game">
         {
           board.map((_, index) => {
