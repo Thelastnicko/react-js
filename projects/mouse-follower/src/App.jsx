@@ -4,8 +4,13 @@ function App() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    console.log("effect");
-  });
+    console.log("effect", {enabled});
+    const handleMove = (event) =>{
+const {clientX, clientY} = event
+console.log('handleMove', {clientX,clientY})
+    }
+    window.addEventListener('pointermove', handleMove)
+  },[enabled]);
   return (
     <main>
       <div style={{
